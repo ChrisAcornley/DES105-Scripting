@@ -15,24 +15,25 @@ public class PlayerCharacterController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float move = Input.GetAxis("Horizontal");
+        //float move = Input.GetAxis("Horizontal");
 
-        Rigidbody2D rigidbody = this.GetComponent<Rigidbody2D>();
-        rigidbody.velocity = new Vector2(move * maxSpeed, rigidbody.velocity.y);
+        //Rigidbody2D rigidbody = this.GetComponent<Rigidbody2D>();
+        //rigidbody.velocity = new Vector2(move * maxSpeed, rigidbody.velocity.y);
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            rigidbody.AddForce(new Vector2(0f, 700f));
+            print("You have pressed Space");
+            this.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 700f));
         }
 
-        if (move > 0f && !facingRight)
-        {
-            Flip();
-        }
-        else if (move < 0f && facingRight)
-        {
-            Flip();
-        }
+        //if (move > 0f && !facingRight)
+        //{
+        //    Flip();
+        //}
+        //else if (move < 0f && facingRight)
+        //{
+        //    Flip();
+        //}
     }
 
     void Flip()
